@@ -20,4 +20,6 @@ const vehicleUsage = 30
 // 9. Add up your points. 
 const totalCarbon = houseMembers + houseSize + meatEater + washingMachine + newPurchase + garbageFill + recyclePlastic + vehicleUsage;
 // 10. Write JS to update the rendered html (index.html) with total footprint
-document.querySelector("h2").innerText = 'My carbon footPrint is ' + totalCarbon;
+//document.querySelector("h2").innerText = 'My carbon footPrint is ' + totalCarbon;
+const myHeading = document.querySelector('h2');
+myHeading.textContent = "My carbon footprint is " + totalCarbon
