@@ -1,7 +1,7 @@
-const cFpData = [];
+const cfpData = [];
 
 function determineHouseholdPoints(numberInHousehold) {
-  console.log("inside block scope");
+  //console.log("inside block scope");
   let household = 0;
   if (numberInHousehold === 1) {
     household = 14;
@@ -17,16 +17,15 @@ function determineHouseholdPoints(numberInHousehold) {
     household = 4;
   } else if (numberInHousehold > 6) {
     household = 2;
+  } else {
+    console.log("no update to points")
   }
-  console.log(
-    `Based on the number of members in the household ${numberInHousehold}, the points would be ${household}.`
-  );
 
   return household;
 }
 
 function determineHomeSize(house) {
-  console.log("inside the block scope right how");
+  //console.log("inside the block scope right how");
   let householdPts = 0;
   if (house === "large") {
     householdPts = 10;
@@ -37,37 +36,36 @@ function determineHomeSize(house) {
   } else {
     householdPts = 2;
   }
-  console.log(
-    `Based on ${house} house size, the carbon footprint points is ${householdPts}.`
-  );
   return householdPts;
 }
 
-console.log("global scope");
 
 function start(householdMem, houseSizez) {
-  const homeSize = determineHomeSize(houseSizez);
+  const homeSizePTS = determineHomeSize(houseSizez);
   const houseHoldPTS = determineHouseholdPoints(householdMem);
-  const total = homeSize + houseHoldPTS;
-  cFpData.push(householdMem, houseSizez, homeSize, houseHoldPTS, total);
+  const total = homeSizePTS + houseHoldPTS;
+  cfpData.push([householdMem, houseSizez, homeSizePTS, houseHoldPTS, total]);
  
 }
 
 function displayOutput(){
-
+  for (arr of cfpData) {
+    console.log(arr);
+    const output = document.getElementById("output");
+    const newP = document.createElement("p");
+    newP.textContent = `Carbon Footprint total is ${arr[4]}.
+    In a household member of ${arr[0]} generate carbon 
+    point of ${arr[3]}. In a ${arr[1]}house size generate ${arr[2]} point.`;
+    output.appendChild(newP);
+  }
 }
-
+  
 
 start(5, "large");
 start(2, "medium");
-start(3, "large");
-start(4, "medium");
-start(5, "apt");
-start(1, "small");
-start(2, "apt");
 start(3, "small");
-start(1, "small");
-start(5, "apt");
+start(4, "apt");
 
 
-displayOutput()
+
+displayOutput();
