@@ -48,14 +48,14 @@ function start(householdMem, houseSizez) {
  
 }
 
-function displayOutput(){
+function displayOutput() {
   for (arr of cfpData) {
     console.log(arr);
     const output = document.getElementById("output");
     const newP = document.createElement("p");
     newP.textContent = `Carbon Footprint total is ${arr[4]}.
     In a household member of ${arr[0]} generate carbon 
-    point of ${arr[3]}. In a ${arr[1]}house size generate ${arr[2]} point.`;
+    point of ${arr[3]}. In a ${arr[1]} house size generate ${arr[2]} point.`;
     output.appendChild(newP);
   }
 }
@@ -65,7 +65,9 @@ start(5, "large");
 start(2, "medium");
 start(3, "small");
 start(4, "apt");
-
-
+start(2, "large");
+start(1, "medium");
+start(3, "small");
+start(1, "apt");
 
 displayOutput();
