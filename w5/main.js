@@ -48,13 +48,22 @@ function start(householdMem, houseSizez) {
   const total = homeSizePTS + houseHoldPTS;
 
 
+  // const cfpObj= {
+  // members: householdMem,
+  // size: houseSizez,
+  // houseHPts: houseHoldPTS,
+  // homeZPts: homeSizePTS,
+  // cfpTotal: total,
+  // };
+
   cfpData.push({
-  members: householdMem,
-  size: houseSizez,
-  houseHPts: houseHoldPTS,
-  homeZPts: homeSizePTS,
-  cfpTotal: total,
-  });
+    members: householdMem,
+    size: houseSizez,
+    houseHPts: houseHoldPTS,
+    homeZPts: homeSizePTS,
+    cfpTotal: total,
+    });
+  
 
   // displayObj(cfpObj)
   //return this.total;
@@ -62,18 +71,21 @@ function start(householdMem, houseSizez) {
 }
 
 
-function displayObj() {
-  
+function displayObj(obj) {
+  for (obj of cfpData) {
   const output = document.getElementById("output");
   const newH2 = document.createElement("h2");
-  newH2.textContent = ` the total: ${cfpObj.cfpTotal}`
+  newH2.textContent = ` Carbon Footprint total: ${obj.cfpTotal}`;
   const newH3 = document.createElement("h3");
-  newH3.textContent = `Members: ${cfpObj.members}, score: ${cfpObj.houseHPts}`
+  newH3.textContent = `Based on number in and size of home`;
   const newP = document.createElement("p"); 
-  newP.textContent = `Home size: ${cfpObj.size}, score: ${cfpObj.homeZPts}  `;
+  newP.textContent = `This number is based on the number of people in the house of ${obj.members}; (score: ${obj.homeZPts})`;
+  newP.textContent += `and a ${obj.size} size of home (score:${obj.homeZPts}).`;
   output.appendChild(newH2)
   output.appendChild(newH3)
   output.appendChild(newP)
+  }
+  
 }
 
 start(5, "large");
@@ -85,4 +97,6 @@ start(1, "medium");
 start(5, "small");
 start(2, "apt");
 
-console.log(cfpData)
+console.log(cfpData);
+
+displayObj();
