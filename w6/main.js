@@ -1,9 +1,9 @@
 
- const cfpData = [];
+const cfpData = [];
+const FOAM = document.getElementById("form");
 
 function determineHouseholdPoints(numberInHousehold) {
  
-  
   let household = 0;
   if (numberInHousehold === 1) {
     household = 14;
@@ -27,7 +27,7 @@ function determineHouseholdPoints(numberInHousehold) {
 }
 
 function determineHomeSize(house) {
-  //console.log("inside the block scope right how");
+ 
   let householdPts = 0;
   if (house === "large") {
     householdPts = 10;
@@ -46,16 +46,6 @@ function start(householdMem, houseSizez) {
   const homeSizePTS = determineHomeSize(houseSizez);
   const houseHoldPTS = determineHouseholdPoints(householdMem);
   const total = homeSizePTS + houseHoldPTS;
-
-
-  // const cfpObj= {
-  // members: householdMem,
-  // size: houseSizez,
-  // houseHPts: houseHoldPTS,
-  // homeZPts: homeSizePTS,
-  // cfpTotal: total,
-  // };
-
   cfpData.push({
     members: householdMem,
     size: houseSizez,
@@ -63,41 +53,53 @@ function start(householdMem, houseSizez) {
     homeZPts: homeSizePTS,
     cfpTotal: total,
     });
-  
-
-  // displayObj(cfpObj)
-  //return this.total;
-
+    // displayObj(cfpData);
 }
 
 
-function displayObj(obj) {
-  for (obj of cfpData) {
+function displayObj() {
+
   const output = document.getElementById("output");
+
+  for (obj of cfpData) {
   const newH2 = document.createElement("h2");
   newH2.textContent = ` Carbon Footprint total: ${obj.cfpTotal}`;
   const newH3 = document.createElement("h3");
   newH3.textContent = `Based on number in and size of home`;
   const newP = document.createElement("p"); 
   newP.textContent = `This number is based on the amount of people in the house 
-  of ${obj.members}; (score: ${obj.homeZPts})`;
+  of ${obj.members}; (score: ${obj.houseHPts})`;
   newP.textContent += `and a ${obj.size} size of home (score:${obj.homeZPts}).`;
   output.appendChild(newH2)
   output.appendChild(newH3)
   output.appendChild(newP)
   }
-  
 }
+  
+FOAM.addEventListener("submit", function(e) {
+  
+  e.preventDefault();
 
-start(5, "large");
-start(2, "medium");
-start(3, "small");
-start(4, "apt");
-start(3, "large");
-start(1, "medium");
-start(5, "small");
-start(2, "apt");
+  const firstName = FOAM.firstname.value;
+  const lastName = FOAM.lastname.value;
+  const houseMembers = parseInt(FOAM.housem.value);
 
-console.log(cfpData);
+  const houseSize = FOAM.housez.value;
 
-displayObj();
+  
+  start(houseMembers, houseSize);
+  displayObj();
+  FOAM.reset();
+
+})
+
+
+// Why do you think we got duplicates? 
+//Its because when we i call the displayObj()
+
+//Is the apartment score correct? If not why? 
+// I think my code is correct for the apartment. It makes sense that all variables are in the right order. 
+
+// why are we doing all this work in the form to make sure the user give us good data? 
+
+// we want to make sure that the input value is going to be read correctly into our function value.
