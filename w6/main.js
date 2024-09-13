@@ -57,15 +57,15 @@ function start(householdMem, houseSizez) {
 }
 
 
-function displayObj() {
+function displayObj(firstName, lastName) {
 
   const output = document.getElementById("output");
 
   for (obj of cfpData) {
   const newH2 = document.createElement("h2");
-  newH2.textContent = ` Carbon Footprint total: ${obj.cfpTotal}`;
+  newH2.textContent = `Carbon Footprint total: ${obj.cfpTotal}`;
   const newH3 = document.createElement("h3");
-  newH3.textContent = `Based on number in and size of home`;
+  newH3.textContent = `Based on ${firstName} ${lastName} number in and size of home`;
   const newP = document.createElement("p"); 
   newP.textContent = `This number is based on the amount of people in the house 
   of ${obj.members}; (score: ${obj.houseHPts})`;
@@ -88,7 +88,7 @@ FOAM.addEventListener("submit", function(e) {
 
   
   start(houseMembers, houseSize);
-  displayObj();
+  displayObj(firstName, lastName);
   FOAM.reset();
 
 })
