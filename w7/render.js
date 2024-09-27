@@ -34,13 +34,17 @@ function renderTblHeading(data) {
     //const trTextArr = ["pan", 3, "large", 20, "Edit", "Del"];
     // const trTextArr = 
     
-    data.forEach(function (text) {
+    data.forEach(function (dataObj) {
+      const tr = document.createElement("tr")
       const td = document.createElement("td");
-      
-      for(let key in text) {
-        td.textContent = text[key];
+      const trTextArr = ["firstName", "lastName", "member", "size", "houseHPTs", "HomeZPts"];
+      // const trTextArr = datObj
+      trTextArr.forEach(function(text) {
+        td.textContent = dataObj[text];
         tr.appendChild(td);
-      }
+      })
+
+   
       
     });
   
