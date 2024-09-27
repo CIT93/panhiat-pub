@@ -31,12 +31,17 @@ function renderTblHeading(data) {
     //start coding challenge for tbody.
     const tBody = document.createElement("tbody");
     const tr = document.createElement("tr");
-    const trTextArr = ["pan", 3, "large", 20, "Edit", "Del"];
-    //const trTextArr = data.[i];
-    trTextArr.forEach(function (text) {
+    //const trTextArr = ["pan", 3, "large", 20, "Edit", "Del"];
+    // const trTextArr = 
+    
+    data.forEach(function (text) {
       const td = document.createElement("td");
-      td.textContent = text;
-      tr.appendChild(td);
+      
+      for(let key in text) {
+        td.textContent = text[key];
+        tr.appendChild(td);
+      }
+      
     });
   
   
@@ -45,8 +50,8 @@ function renderTblHeading(data) {
     const btnDel = document.createElement("button");
     btnEdit.textContent = "Edit";
     btnDel.textContent = "Del";
-    // td.appendChild(btnEdit);
-    // td.appendChild(btnDel);
+    td.appendChild(btnEdit);
+    td.appendChild(btnDel);
     tr.appendChild(td);
     tBody.appendChild(tr);
     table.appendChild(tBody);
