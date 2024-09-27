@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Week 7 - Carbon Footprint - pri</title>
+    <link rel="icon" type="image/x-icon" href=".." />
+    <link rel="stylesheet" href="style.css">
+    <script type="module" defer src="main.js"></script>
+  </head>
+  <body>
+    <h1>Carbon FootPrint</h1>
+    <form id="form">
+        <fieldset>
+            <legend>Input Cardon Footprint</legend>
+            <div>
+                <label for="firstname">First Name:</label>
+                <input type="text" name="firstname" minlenght="1" maxlength="20" required/>
+            </div>
+            <div>
+                <label for="lastname">Last Name:</label>
+                <input type="text" name="lastname" minlength="1" maxlength="20" required/>
+            </div>
+            <div>
+                <label for="housem">Count the memebers of your household: </label>
+                <input type="number" name="housem" min="1" max="6"required/>
+            </div>
+            <div>
+                <label for="housez">Consider the size of you home:</label>
+                <!-- <input type="text" name="housez" required/> -->
+                <select name="houses" id="housez" required>
+                  <option value="">Please Enter Size of Home</option>
+                  <option value="apt">Apartment</option>
+                  <option value="large">Large</option>
+                  <option value="medium">Medium</option>
+                  <option value="small">Small</option>
+                </select>
+            </div>
+            <button type="submit">Submit</button>     
+        </fieldset>
+    </form>
+    <div id="output"></div>
+    <br>
+    <section>
+      <div id="tab-data"></div>
+      <!-- <table>
+        <caption>
+          Calcuting Your Carbon Footprint Points
+        </caption>
+        <thead>
+          <tr>
+            <th scope="col">Name</th>
+            <th scope="col"># in houseHold</th>
+            <th scope="col">Size of House</th>
+            <th scope="col">Carbon Footprint</th>
+            <th scope="col">Action</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Pa Nhia</td>
+            <td>3</td>
+            <td>medium</td>
+            <td>28</td>
+            <td>
+              <button>Edit</button>
+              <button>Del</button>
+            </td>
+          </tr>
+          <tr>
+            <td>Pa Nhia</td>
+            <td>3</td>
+            <td>medium</td>
+            <td>28</td>
+            <td>
+              <button>Edit</button>
+              <button>Del</button>
+            </td>
+          </tr>
+          
+        </tbody>
+        
+      </table> -->
+      
+    </section>
+  </body>
+</html>
