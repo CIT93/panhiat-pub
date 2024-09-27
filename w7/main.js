@@ -1,5 +1,5 @@
 import { renderTbl } from "./render.js";
-import { } from "carbon.js";
+import {determineHouseholdPoints, determineHomeSize } from "./carbon.js";
 
 const FOAM = document.getElementById("form");
 const OUTPUT = document.getElementById("output");

@@ -32,6 +32,7 @@ function renderTblHeading(data) {
     const tBody = document.createElement("tbody");
     const tr = document.createElement("tr");
     const trTextArr = ["pan", 3, "large", 20, "Edit", "Del"];
+    //const trTextArr = data.[i];
     trTextArr.forEach(function (text) {
       const td = document.createElement("td");
       td.textContent = text;
