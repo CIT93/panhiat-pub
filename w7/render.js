@@ -44,8 +44,8 @@ function renderTblHeading(data) {
     const btnDel = document.createElement("button");
     btnEdit.textContent = "Edit";
     btnDel.textContent = "Del";
-    td.appendChild(btnEdit);
-    td.appendChild(btnDel);
+    // td.appendChild(btnEdit);
+    // td.appendChild(btnDel);
     tr.appendChild(td);
     tBody.appendChild(tr);
     table.appendChild(tBody);
