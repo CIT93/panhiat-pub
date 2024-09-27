@@ -2,6 +2,7 @@ const TBL = document.getElementById("tab-data");
 
 
 function renderTblHeading(data) {
+  TBL.innerHTML = "";
     const table = document.createElement("table");
     const thead = document.createElement("thead");
     const tr = document.createElement("tr");
@@ -36,13 +37,20 @@ function renderTblHeading(data) {
     
     data.forEach(function (dataObj) {
       const tr = document.createElement("tr")
-      const td = document.createElement("td");
-      const trTextArr = ["firstName", "lastName", "member", "size", "houseHPTs", "HomeZPts"];
+      const tdName = document.createElement("td");
+      tdName.textContent = dataObj.firstName;
+      const tdTotal = document.createElement("td");
+      tdTotal.textContent = dataObj.cfpTotal;
+      tr.appendChild(tdName);
+      tr.appendChild(tdTotal);
+      tBody.appendChild(tr);
+      // const trTextArr = ["firstName", "lastName", "member", "size", "houseHPTs", "HomeZPts"];
+      
       // const trTextArr = datObj
-      trTextArr.forEach(function(text) {
-        td.textContent = dataObj[text];
-        tr.appendChild(td);
-      })
+      // trTextArr.forEach(function(text) {
+      //   tdBody.textContent = dataObj[text];
+      //   tr.appendChild(td);
+      // })
 
    
       
@@ -50,12 +58,12 @@ function renderTblHeading(data) {
   
   
     const td = document.createElement("td");
-    const btnEdit = document.createElement("button");
-    const btnDel = document.createElement("button");
-    btnEdit.textContent = "Edit";
-    btnDel.textContent = "Del";
-    td.appendChild(btnEdit);
-    td.appendChild(btnDel);
+    // const btnEdit = document.createElement("button");
+    // const btnDel = document.createElement("button");
+    // btnEdit.textContent = "Edit";
+    // btnDel.textContent = "Del";
+    // td.appendChild(btnEdit);
+    // td.appendChild(btnDel);
     tr.appendChild(td);
     tBody.appendChild(tr);
     table.appendChild(tBody);
