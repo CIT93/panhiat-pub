@@ -44,26 +44,12 @@ function renderTblHeading(data) {
       tr.appendChild(tdName);
       tr.appendChild(tdTotal);
       tBody.appendChild(tr);
-      // const trTextArr = ["firstName", "lastName", "member", "size", "houseHPTs", "HomeZPts"];
-      
-      // const trTextArr = datObj
-      // trTextArr.forEach(function(text) {
-      //   tdBody.textContent = dataObj[text];
-      //   tr.appendChild(td);
-      // })
-
-   
+     
       
     });
   
   
     const td = document.createElement("td");
-    // const btnEdit = document.createElement("button");
-    // const btnDel = document.createElement("button");
-    // btnEdit.textContent = "Edit";
-    // btnDel.textContent = "Del";
-    // td.appendChild(btnEdit);
-    // td.appendChild(btnDel);
     tr.appendChild(td);
     tBody.appendChild(tr);
     table.appendChild(tBody);
