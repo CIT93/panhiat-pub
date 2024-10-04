@@ -51,7 +51,7 @@ FOAM.addEventListener("submit", function (e) {
 
   start(firstName, lastName, houseMembers, houseSize);
   //OUTPUT.innerHTML = "";
-  renderTbl(cfpData);
+  renderTbl(cfpData, FOAM);
   FOAM.reset();
 });
 

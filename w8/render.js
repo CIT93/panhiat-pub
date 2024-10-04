@@ -1,4 +1,5 @@
 const TBL = document.getElementById("tab-data");
+const FOAM = document.getElementById("form");
 
 
 function renderTblHeading(data) {
@@ -24,7 +25,7 @@ function renderTblHeading(data) {
     return table;
 }
 
-function renderTblBtn(index, data) {
+function renderTblBtn(obj, index, data) {
   const td = document.createElement("td");
   const btnEdit = document.createElement("button");
   const btnDel = document.createElement("button")
@@ -37,7 +38,13 @@ function renderTblBtn(index, data) {
     renderTbl(data); 
   })
   btnEdit.addEventListener("click", function(e) {
-    
+    console.log(FOAM);
+    FOAM[1].value = obj.firstName;
+    FOAM[2].value = obj.lastName;
+    FOAM[3].value = obj.members;
+    FOAM[4].value = obj.size;
+    data.splice(index, 1)
+    renderTbl(data);
   })
   return td;
 }
@@ -54,7 +61,7 @@ function renderTblBody(data) {
       tr.appendChild(td);
       }
     }
-    const td = renderTblBtn(index, data);
+    const td = renderTblBtn(obj, index, data);
     tr.appendChild(td);
     tBody.appendChild(tr);
   });
