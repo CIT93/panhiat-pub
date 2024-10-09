@@ -2,11 +2,22 @@ import { renderTbl } from "./render.js";
 import {determineHouseholdPoints, determineHomeSize } from "./cfp.js";
 import { FORM } from "./global.js";
 import { saveLS, cfpData } from "./storage.js";
+function nameValidation (first, last) {
+  if (first.value < 1 || first.value > 20) {
+    output.textContent = "First name is required";
+    return;
+  }
+  if (last.value < 1 || last.value > 6 ) {
+    output.textContent = "Last name is required";
+    return
+  }
+}
 
 function start(first, last, householdMem, houseSizez) {
   const homeSizePTS = determineHomeSize(houseSizez);
   const houseHoldPTS = determineHouseholdPoints(householdMem);
   const total = homeSizePTS + houseHoldPTS;
+  nameValidation(first, last)
   cfpData.push({
     firstName: first,
     lastName: last,
