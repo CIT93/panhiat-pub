@@ -1,5 +1,3 @@
-# Code Challenge
+# code from watching solution
 
-In this coding challenge I was not able to display the error message to the UI or the output. I think what I"m lacking is figuring where it should go. Should the if statement should go in the start() function or should I create its own function. And then I kept getting error on the length. I will review the solution video. 
-
-After watching your video on how to solve it by placing the if statement in the eventlistener, my code worked. Thank you. 
+Learning how to use the blur event and template strings in JavaScript was challenging. While the blur eventlistener is still new to me, I grasped the concept of using it to trigger actions when an input field loses focus. I also found that template strings simplify dynamic messages in code. I definitely need to practice input validation. 

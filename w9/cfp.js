@@ -1,41 +1,44 @@
+const cfpData = [];
 
-
-function determineHouseholdPoints(numberInHousehold) {
-  let household = 0;
-  if (numberInHousehold === 1) {
-    household = 14;
-  } else if (numberInHousehold === 2) {
-    household = 12;
-  } else if (numberInHousehold === 3) {
-    household = 10;
-  } else if (numberInHousehold === 4) {
-    household = 8;
-  } else if (numberInHousehold === 5) {
-    household = 6;
-  } else if (numberInHousehold === 6) {
-    household = 4;
-  } else if (numberInHousehold > 6) {
-    household = 2;
-  } else {
-    console.log("no update to points");
+function determineHouseSizePts(size) {
+    let houseSizePoints = 0;
+    if (size === "large") {
+      houseSizePoints = 10;
+    } else if (size === "medium") {
+      houseSizePoints = 7;
+    } else if (size === "small") {
+      houseSizePoints = 4;
+    } else if (size === "apt") {
+      houseSizePoints = 2;
+    } else {
+      console.log("no update to points");
+    }
+    return houseSizePoints;
   }
-
-  return household;
-}
-
-function determineHomeSize(house) {
-  let householdPts = 0;
-  if (house === "large") {
-    householdPts = 10;
-  } else if (house === "medium") {
-    householdPts = 7;
-  } else if (house === "small") {
-    householdPts = 4;
-  } else {
-    householdPts = 2;
+  
+  function determineHouseHoldPts(numberInHousehold) {
+    let houseHoldPoints = 0;
+    if (numberInHousehold === 1) {
+      houseHoldPoints = 14;
+    } else if (numberInHousehold === 2) {
+      houseHoldPoints = 12;
+    } else if (numberInHousehold === 3) {
+      houseHoldPoints = 10;
+    } else if (numberInHousehold === 4) {
+      houseHoldPoints = 8;
+    } else if (numberInHousehold === 5) {
+      houseHoldPoints = 6;
+    } else if (numberInHousehold === 6) {
+      houseHoldPoints = 4;
+    } else if (numberInHousehold > 6) {
+      houseHoldPoints = 2;
+    } else {
+      console.log("no update to points");
+    }
+    return houseHoldPoints;
   }
-  return householdPts;
-}
+  
 
 
-export {determineHouseholdPoints, determineHomeSize}
+  export {determineHouseSizePts, determineHouseHoldPts};
+  
