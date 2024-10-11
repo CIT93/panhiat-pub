@@ -15,11 +15,13 @@
             <legend>Input Cardon Footprint</legend>
             <div>
                 <label for="firstname">First Name:</label>
-                <input type="text" name="firstname" minlenght="1" maxlength="20" />
+                <input type="text" name="firstname" id="firstName" minlenght="1" maxlength="20" />
+                <span id="firstNameError" class="error"></span>
             </div>
             <div>
                 <label for="lastname">Last Name:</label>
-                <input type="text" name="lastname" minlength="1" maxlength="20" />
+                <input type="text" name="lastname" id="lastName" minlength="1" maxlength="20" />
+                <span id="lastNameError" class="error"></span>
             </div>
             <div>
                 <label for="housem">Count the memebers of your household: </label>
@@ -37,6 +39,7 @@
                 </select>
             </div>
             <button type="submit">Submit</button>     
+            <!-- <span id="submitError" class="error"></span> -->
         </fieldset>
     </form>
     <div id="output"></div>

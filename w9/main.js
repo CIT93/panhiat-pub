@@ -1,15 +1,17 @@
 import { renderTbl } from "./render.js";
 import {determineHouseholdPoints, determineHomeSize } from "./cfp.js";
 import { FORM } from "./global.js";
-import { saveLS, cfpData } from "./storage.js";
+import { saveLS, cfpData,  } from "./storage.js";
 
+const firstNameEl = document.getElementById("firstName");
+const lastNameEl = document.getElementById("lastName");
+const submit = document.getElementById("submiterror")
 
 function start(first, last, householdMem, houseSizez) {
   const homeSizePTS = determineHomeSize(houseSizez);
   const houseHoldPTS = determineHouseholdPoints(householdMem);
   const total = homeSizePTS + houseHoldPTS;
- 
-  cfpData.push({
+ cfpData.push({
     firstName: first,
     lastName: last,
     members: householdMem,
@@ -41,29 +43,45 @@ function displayObj() {
 
 renderTbl(cfpData);
 
+  // Function to validate a single field
+function validateField(event) {
+  const field = event.target.value;
+  const fieldId = event.target.id;
+  const fieldError = document.getElementById(`${fieldId}Error`);
+
+  if (field === "") {
+      fieldError.textContent = `${fieldId} is required`;
+      event.target.classList.add('invalid');
+  } else {
+      fieldError.textContent = "";
+      event.target.classList.remove('invalid');
+  }
+};
+
+//Attach blur event listeners
+firstNameEl.addEventListener("blur", validateField);
+lastNameEl.addEventListener("blur", validateField);
+
+
+
+
 FORM.addEventListener("submit", function (e) {
   e.preventDefault();
 
   const firstName = FORM.firstname.value;
   const lastName = FORM.lastname.value;
-  const houseMembers = parseInt(FORM.housem.value);
-
-  const houseSize = FORM.housez.value;
-
-  const output = document.getElementById("output");
-
-  if (firstName.length < 1 || firstName.length > 20) {
-    output.textContent = "First name is required";
-    return;
-  }
-  if (lastName.length < 1 || lastName.length > 6 ) {
-    output.textContent = "Last name is required";
+  const firstNameIsValid = firstNameEl.value !== '';
+  const lastNameIsValid = lastNameEl.value !== '';
+  if (firstNameIsValid && lastNameIsValid) {
+    submitError.textContent = "Form requires first name and last name.";
     return
   }
-
-  start(firstName, lastName, houseMembers, houseSize);
-  saveLS(cfpData)
-  //renderTbl(cfpData);
-  FORM.reset();
+    submit.textContent = '' ;
+    const houseMembers = parseInt(FORM.housem.value);
+    const houseSize = FORM.houseS.value;
+    start(firstName, lastName, houseMembers, houseSize);
+    saveLS(cfpData);
+    renderTbl(cfpData);
+    FORM.reset();
 });
-
+// start(firstName, lastName, houseMembers, houseSize);
