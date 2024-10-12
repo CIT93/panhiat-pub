@@ -5,7 +5,7 @@ import {saveLS, cfpData} from "./storage.js";
 
 
 
-const start = function(firstName, lastName, houseMembers, houseSize) {
+const start = (firstName, lastName, houseMembers, houseSize) => {
   const houseHoldPTS = determineHouseHoldPts(houseMembers);
   const houseSizePTS = determineHouseSizePts(houseSize);
   const total = houseHoldPTS + houseSizePTS;
@@ -22,7 +22,7 @@ const start = function(firstName, lastName, houseMembers, houseSize) {
 
 renderTbl(cfpData);
 
-const validateField = function(event) {
+const validateField = (event) => {
   const field = event.target.value;
   const fieldId = event.target.id;
   const fieldError = document.getElementById(`${fieldId}Error`);
@@ -42,7 +42,7 @@ LNAME.addEventListener('blur', validateField);
 
 
 
-FORM.addEventListener("submit", function(e){
+FORM.addEventListener("submit", e => {
   e.preventDefault();
 
  if (FNAME.value !== '' && LNAME.value !== '') {
@@ -57,9 +57,8 @@ FORM.addEventListener("submit", function(e){
  
 })
 
-const add = function(...a) {
-  return 2 + a[3]
-}
+const add = a => 2 + a
+
 
 result = add2(1,2,3,4)
 
@@ -67,7 +66,7 @@ result = add2(1,2,3,4)
 //IIFE
 const a = 3;
 
-(function(a) {
+(function (a) {
   console.log("inside IIFE");
   console.log(a);
 })();
