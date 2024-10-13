@@ -6,8 +6,8 @@ import {saveLS, cfpData} from "./storage.js";
 
 
 const start = (...i) => {
-  const houseHoldPTS = determineHouseHoldPts(houseMembers[i[2]]);
-  const houseSizePTS = determineHouseSizePts(houseSize[i[3]]);
+  const houseHoldPTS = determineHouseHoldPts([i[2]]);
+  const houseSizePTS = determineHouseSizePts([i[3]]);
   const total = houseHoldPTS + houseSizePTS;
   cfpData.push({
     firstName: i[0],
@@ -64,16 +64,16 @@ FORM.addEventListener("submit", e => {
 
 // const result add2(1,2,3,4)
 
-const add2 = a => 2 + a;
+// const add2 = a => 2 + a;
 
 
-result = add2(1,2,3,4)
+// result = add2(1,2,3,4)
 
-// spread argurment 
-//IIFE
-const a = 3;
+// // spread argurment 
+// //IIFE
+// const a = 3;
 
-(function (a) {
-  console.log("inside IIFE");
-  console.log(a);
-})();
+// (function (a) {
+//   console.log("inside IIFE");
+//   console.log(a);
+// })();

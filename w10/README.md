@@ -101,3 +101,8 @@ Summary:
 I am aware of passing a value into a parameter.  This is great because I did not realized that add2() was a function call and does not hold the value of the return. I thought its returned and can be used. 
 
 
+## default value 
+We can update functions to have default parameter values by using the default parameters feature. This ensures that if a value is not provided when calling the function, it will default to the specified value.
+
+## rest operator 
+The rest operator (...) can be used when you want a function to accept an indefinite number of arguments and handle them as an array.

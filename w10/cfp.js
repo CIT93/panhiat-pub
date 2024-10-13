@@ -26,8 +26,6 @@ const determineHouseSizePts = (size = "medium") => {
     houseSizePoints = 4;
   } else if (size === "apt") {
     houseSizePoints = 2;
-  } else {
-    console.log("no update to points");
   }
   return houseSizePoints;
 }
@@ -47,8 +45,6 @@ const determineHouseHoldPts = (numberInHousehold = 1) => {
       houseHoldPoints = 4;
     } else if (numberInHousehold > 6) {
       houseHoldPoints = 2;
-    } else {
-      console.log("no update to points");
     }
     return houseHoldPoints;
   }
