@@ -7,7 +7,7 @@ const renderTblHeading = () => {
   const thead = document.createElement("thead");
   const tr = document.createElement("tr");
   const headingTextArr = ["Name", "HouseHold", "HouseSize", "Carbon Footprint", "Action"];
-  headingTextArr.forEach( (text) => {
+  headingTextArr.forEach(text => {
     const th = document.createElement("th");
     th.textContent = text;
     tr.appendChild(th);
@@ -72,7 +72,7 @@ const renderTblBody = (data) => {
 
 }
 
-const renderTbl = (data) => {
+const renderTbl = data => {
   TBL.innerHTML = "";
   if (data.length !== 0) {
     const table = renderTblHeading();

@@ -1,22 +1,37 @@
 // const cfpData = [];
 
-const determineHouseSizePts = (size) => {
-    let houseSizePoints = 0;
-    if (size === "large") {
-      houseSizePoints = 10;
-    } else if (size === "medium") {
-      houseSizePoints = 7;
-    } else if (size === "small") {
-      houseSizePoints = 4;
-    } else if (size === "apt") {
-      houseSizePoints = 2;
-    } else {
-      console.log("no update to points");
-    }
-    return houseSizePoints;
-  }
+// const determineHouseSizePts = size => {
+//     let houseSizePoints = 0;
+//     if (size === "large") {
+//       houseSizePoints = 10;
+//     } else if (size === "medium") {
+//       houseSizePoints = 7;
+//     } else if (size === "small") {
+//       houseSizePoints = 4;
+//     } else if (size === "apt") {
+//       houseSizePoints = 2;
+//     } else {
+//       console.log("no update to points");
+//     }
+//     return houseSizePoints;
+//   }
   
-const determineHouseHoldPts = (numberInHousehold) => {
+const determineHouseSizePts = (size = "medium") => {
+  let houseSizePoints = 0;
+  if (size === "large") {
+    houseSizePoints = 10;
+  } else if (size === "medium") {
+    houseSizePoints = 7;
+  } else if (size === "small") {
+    houseSizePoints = 4;
+  } else if (size === "apt") {
+    houseSizePoints = 2;
+  } else {
+    console.log("no update to points");
+  }
+  return houseSizePoints;
+}
+const determineHouseHoldPts = (numberInHousehold = 1) => {
     let houseHoldPoints = 0;
     if (numberInHousehold === 1) {
       houseHoldPoints = 14;

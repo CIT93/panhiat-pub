@@ -5,15 +5,15 @@ import {saveLS, cfpData} from "./storage.js";
 
 
 
-const start = (firstName, lastName, houseMembers, houseSize) => {
-  const houseHoldPTS = determineHouseHoldPts(houseMembers);
-  const houseSizePTS = determineHouseSizePts(houseSize);
+const start = (...i) => {
+  const houseHoldPTS = determineHouseHoldPts(houseMembers[i[2]]);
+  const houseSizePTS = determineHouseSizePts(houseSize[i[3]]);
   const total = houseHoldPTS + houseSizePTS;
   cfpData.push({
-    firstName: firstName,
-    lastName: lastName,
-    houseM: houseMembers,
-    houseS: houseSize,
+    firstName: i[0],
+    lastName: i[1],
+    houseM: i[2],
+    houseS: i[3],
     houseMPTS: houseHoldPTS,
     houseSPTS: houseSizePTS,
     cfpTotal: total,
@@ -22,7 +22,7 @@ const start = (firstName, lastName, houseMembers, houseSize) => {
 
 renderTbl(cfpData);
 
-const validateField = (event) => {
+const validateField = event => {
   const field = event.target.value;
   const fieldId = event.target.id;
   const fieldError = document.getElementById(`${fieldId}Error`);
@@ -57,7 +57,14 @@ FORM.addEventListener("submit", e => {
  
 })
 
-const add = a => 2 + a
+// rest operator 
+// const add2 = function(...1) {
+//   return 2 + a[3]
+// }
+
+// const result add2(1,2,3,4)
+
+const add2 = a => 2 + a;
 
 
 result = add2(1,2,3,4)
