@@ -2,6 +2,7 @@ import {renderTbl} from "./render.js";
 import { determineHouseSizePts, determineHouseHoldPts } from "./cfp.js";
 import {FORM, FNAME, LNAME, SUBMIT } from "./global.js";
 import {saveLS, cfpData} from "./storage.js";
+import { FP } from "./fp.js";
 
 
 const start = (firstName, lastName, houseMembers, houseSize)=> {
@@ -46,7 +47,11 @@ FORM.addEventListener("submit", e => {
 
  if (FNAME.value !== '' && LNAME.value !== '') {
   SUBMIT.textContent = '';
-  start(FNAME.value, LNAME.value, parseInt(FORM.housem.value),FORM.houses.value);
+  //start(FNAME.value, LNAME.value, parseInt(FORM.housem.value),FORM.houses.value);
+  const fpObj = new FP(FNAME.value, LNAME.value, parseInt(FORM.housem.value), FORM.houses.value)
+  //fpObj.houseHoldPts();
+  // fpObj.houseSizePts();
+  cfpData.push(fpObj);
   saveLS(cfpData);
   renderTbl(cfpData);
   FORM.reset();
@@ -56,3 +61,53 @@ FORM.addEventListener("submit", e => {
  
 })
 
+
+
+
+
+
+// const me = {
+//   name: "pan", 
+//   hairColor: "red", 
+//   location: "office", 
+//   sleepScore: 95,
+//   introduce: function() {
+//     console.log(`this is ${this.name} with ${this.hairColor} hair color is in ${this.location}`)
+//   }
+// }
+
+// const you = {
+//   name: "ken", 
+//   hairColor: "blond", 
+//   location: "street", 
+//   sleepScore: 95,
+//   introduce: function() {
+//     console.log(`this is ${this.name} with ${this.hairColor} hair color is in ${this.location}`)
+//   }
+// }
+
+// me.introduce()
+// you.introduce()
+
+class Human {
+  constructor(name, hairColor, location, sleepScore){
+    this.name = name
+    this.hairColor = hairColor
+    this.location = location
+    this.sleepScore = sleepScore
+
+  }
+  introduce() {
+    console.log(`this is ${this.name} with ${this.hairColor} hair color is in ${this.location} and had sleep score ${this.sleepScore}`)
+
+  }
+}
+
+// new prototype
+
+const rio = new Human("Rio", "red", "office", 98 )
+const Pan = new Human("Pan", "black", "school", 98 )
+
+ rio.introduce()
+// Pan.introduce()
+// rio.hrv = 50;
