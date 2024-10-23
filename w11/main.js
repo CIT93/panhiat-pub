@@ -5,7 +5,7 @@ import {saveLS, cfpData} from "./storage.js";
 import { FP } from "./fp.js";
 
 
-const start = (firstName, lastName, houseMembers, houseSize)=> {
+const start = (firstName, lastName, houseMembers, houseSize, foodChoices)=> {
   const houseHoldPTS = determineHouseHoldPts(houseMembers);
   const houseSizePTS = determineHouseSizePts(houseSize);
   const total = houseHoldPTS + houseSizePTS;
@@ -14,6 +14,7 @@ const start = (firstName, lastName, houseMembers, houseSize)=> {
     lastName: lastName,
     houseM: houseMembers,
     houseS: houseSize,
+    food: foodChoices,
     houseMPTS: houseHoldPTS,
     houseSPTS: houseSizePTS,
     cfpTotal: total,
@@ -48,7 +49,7 @@ FORM.addEventListener("submit", e => {
  if (FNAME.value !== '' && LNAME.value !== '') {
   SUBMIT.textContent = '';
   //start(FNAME.value, LNAME.value, parseInt(FORM.housem.value),FORM.houses.value);
-  const fpObj = new FP(FNAME.value, LNAME.value, parseInt(FORM.housem.value), FORM.houses.value)
+  const fpObj = new FP(FNAME.value, LNAME.value, parseInt(FORM.housem.value), FORM.houses.value, FORM.food.value)
   //fpObj.houseHoldPts();
   // fpObj.houseSizePts();
   cfpData.push(fpObj);

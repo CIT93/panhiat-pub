@@ -6,7 +6,7 @@ const renderTblHeading = () => {
   const table = document.createElement("table");
   const thead = document.createElement("thead");
   const tr = document.createElement("tr");
-  const headingTextArr = ["Name", "HouseHold", "HouseSize", "Footprint", "Action"];
+  const headingTextArr = ["Name", "HouseHold", "HouseSize", "Footprint", "FoodChoice", "Action"];
   headingTextArr.forEach(text => {
     const th = document.createElement("th");
     th.textContent = text;
@@ -40,6 +40,7 @@ const renderTblBtn = (obj, index, data) => {
     FORM[2].value = obj.Last;
     FORM[3].value = obj.houseMembers;
     FORM[4].value = obj.houseSize;
+    FORM[4].value = obj.foodChoice
     onUpdate(index, data);
   });
   return td;
