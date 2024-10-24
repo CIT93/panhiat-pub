@@ -39,24 +39,26 @@ class FP {
             } else if (this.houseSize === "small") {
                 this.houseSizePoints  = 4;
             } else if (this.houseSize === "apt") {
-                this.houseSizePoints  = 2;
+                this.houseSizePointssi = 2;
+            } else {
+              this.houseSizePoints = 0;
             }
             
         }
 
         foodChoicePoints() {
         if (this.foodChoice === "Meat Daily") {
-            this.houseSizePoints  = 10;
+            this.foodChoicePoints  = 10;
         } else if (this.foodChoice === "Meat Sometimes") {
-            this.houseSizePoints  = 8;
+          this.foodChoicePoints  = 8;
         } else if (this.foodChoice === "Convenience Food") {
-          this.houseSizePoints  = 4;
+          this.foodChoicePoints  = 4;
         }else if (this.foodChoice === "Vegeterian") {
-            this.houseSizePoints  = 4;
+          this.foodChoicePoints = 4;
         } else if (this.foodChoice === "Vegan" || this.foodChoice === "Locally grown") {
-          this.houseSizePoints  = 2;
+          this.foodChoicePoints  = 2;
         } else if (this.foodChoice === "Prepackage") {
-          this.houseSizePoints = 12;
+          this.foodChoicePoints = 12;
         } 
         
     }

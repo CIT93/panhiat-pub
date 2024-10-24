@@ -6,7 +6,7 @@ const renderTblHeading = () => {
   const table = document.createElement("table");
   const thead = document.createElement("thead");
   const tr = document.createElement("tr");
-  const headingTextArr = ["Name", "HouseHold", "HouseSize", "Footprint", "FoodChoice", "Action"];
+  const headingTextArr = ["Name", "HouseHold", "HouseSize", "FoodChoice", "Footprint", "Action"];
   headingTextArr.forEach(text => {
     const th = document.createElement("th");
     th.textContent = text;
@@ -51,7 +51,7 @@ const renderTblBody = data => {
   cfpData.forEach( (obj, index) => {
     const tr = document.createElement("tr");
     for (const [key, value] of Object.entries(obj)) {
-      if (key !== "last" && key !== "houseHoldPoints" && key !== "houseSizePoints") {
+      if (key !== "last" && key !== "houseHoldPoints" && key !== "houseSizePoints" && key !== "foodChoicePoints") {
         const td = document.createElement("td");
         td.textContent = value;
         tr.appendChild(td);

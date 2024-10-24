@@ -5,7 +5,7 @@ import {saveLS, cfpData} from "./storage.js";
 import { FP } from "./fp.js";
 
 
-const start = (firstName, lastName, houseMembers, houseSize, foodChoices)=> {
+const start = (firstName, lastName, houseMembers, houseSize)=> {
   const houseHoldPTS = determineHouseHoldPts(houseMembers);
   const houseSizePTS = determineHouseSizePts(houseSize);
   const total = houseHoldPTS + houseSizePTS;
@@ -14,7 +14,6 @@ const start = (firstName, lastName, houseMembers, houseSize, foodChoices)=> {
     lastName: lastName,
     houseM: houseMembers,
     houseS: houseSize,
-    food: foodChoices,
     houseMPTS: houseHoldPTS,
     houseSPTS: houseSizePTS,
     cfpTotal: total,
