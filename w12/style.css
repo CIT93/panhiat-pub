@@ -1,0 +1,29 @@
+html {
+    font-size: 22px;
+  }
+
+body {
+background-color: #333;
+color: whitesmoke;
+font-size: 2em;
+}
+input:in-range {
+background-color: green;
+}
+input:out-of-range {
+background-color: red;
+}
+
+input{
+    font-size: .5em;
+}
+
+table, th, td {
+border: 1px solid white;
+padding: 5px;
+color: black
+}
+
+tbody tr:nth-child(odd) {
+background-color: rgb(245, 234, 234);
+}
