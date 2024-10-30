@@ -1,0 +1,1 @@
+The Async Workout assignment was challenging. I was only able to dynamically create elements that can output the result statement. I was not able to incorporate setTimeout correctly to input as instructed. I will review the video and classmate's code to understand what I was missing. 
