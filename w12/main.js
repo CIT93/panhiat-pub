@@ -1,36 +1,24 @@
 const FORM = document.getElementById("form");
-const WORKOUT = document.getElementById("exercise");
-const REPS = document.getElementById("reps");
-const SECONDS = document.getElementById("seconds");
+const OUT = document.getElementById("output");
 
-function display(exerciseType, reps, time) {
-   
-    const newP = document.createElement("p");
-    newP.textContent = `Start ${exerciseType} exercise. The goal is ${reps} reps in ${time} seconds.`
-    
+function updateDOM(message, el) {
+    const newEl = document.createElement(el);
+    newEl.textContent = message;
+    OUT.appendChild(newEl)
+}
 
-    const newH3 = document.createElement("h3");
-    newH3.textContent = `End ${exerciseType} exercise`;
-    const output = document.getElementById("output");
-    output.appendChild(newP)
-    output.appendChild(newH3)
-    
+const startWorkOut = (exerciseType, reps, time, fn) => {
+   fn(`Start ${exerciseType} exercise. The goal is ${reps} reps in ${time} seconds.`, "p")
+    setTimeout(() => {
+        fn(`Stop ${exerciseType}`, "h1")
+    }, time * 1000)
+
 }
 
 FORM.addEventListener("submit", e => {
     e.preventDefault();
-    // const workOut = WORKOUT.value;
-    // const repTime = parseInt(REP.value);
-    // const time = parseInt(SECONDS.value); 
-
-    const exerciseType = WORKOUT.value;
-    const reps = parseInt(REPS.value);
-    const time = parseInt(SECONDS.value);
-
-    display(exerciseType, reps, time);
-    setTimeout(function(){
-        display(exerciseType, reps, time), 2000
-    })
-
-    FORM.reset();
+    const exerciseType = e.target.exercise.value;
+    const reps = parseFloat(e.target.reps.value)
+    const time = parseFloat(e.target.time.value);
+    startWorkOut(exerciseType, reps, time, updateDOM)
 })
