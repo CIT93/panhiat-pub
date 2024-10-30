@@ -11,26 +11,33 @@
 <body>
  
     <section>
+        <h1>Async</h1>
         <form id="form">
             <fieldset>
                 <legend>Time To Get FIT!</legend>
                 <div>
-                    <label>Type of Exercise</label>
-                        <input type="text"></input>
+                    <label for="exercise">Type Of Exercise</label>
+                    <select name="exercise" id="exercise" required>
+                        <option value="">Select a Workout</option>
+                        <option value="Push-ups">Push-up</option>
+                        <option value="Jumping Jacks">Jumping Jacks</option>
+                        <option value="Jump Squat">Jump Squat</option>
+                        <option value="Sit-ups">Sit-ups</option>
+                      </select>
                     </label>
                 </div>
                 <div>
-                    <label>Target Number of Reps</label>
-                        <input type="number" min="1" max="6" required></input>
+                    <label for="reps">Target Number Of Reps</label>
+                        <input id="reps" type="number" min="1" max="6" required></input>
                     </label>
                 </div>
                 <div>
-                    <label>Time in Minutes</label>
-                        <input type="number" min="1" max="60" required></input>
+                    <label for="seconds">Time In Seconds</label>
+                        <input id="seconds" type="number" min="1" max="30" required></input>
                     </label>
                 </div>
                 <div>
-                    <label>Get Ready</label>
+                    <label >Get Ready</label>
                         <input type="submit"></input>
                     </label>
                 </div>
