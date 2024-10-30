@@ -4,9 +4,11 @@ const REPS = document.getElementById("reps");
 const SECONDS = document.getElementById("seconds");
 
 function display(exerciseType, reps, time) {
-    
+   
     const newP = document.createElement("p");
-    newP.textContent = `Start ${exerciseType} exercise. The goal is ${reps} reps in ${time}.`
+    newP.textContent = `Start ${exerciseType} exercise. The goal is ${reps} reps in ${time} seconds.`
+    
+
     const newH3 = document.createElement("h3");
     newH3.textContent = `End ${exerciseType} exercise`;
     const output = document.getElementById("output");
@@ -26,5 +28,9 @@ FORM.addEventListener("submit", e => {
     const time = parseInt(SECONDS.value);
 
     display(exerciseType, reps, time);
+    setTimeout(function(){
+        display(exerciseType, reps, time), 2000
+    })
+
     FORM.reset();
 })
