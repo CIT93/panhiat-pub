@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Async Workout</title>
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="style.css">
+    <script defer src="main.js"></script>
+</head>
+<body>
+ 
+    <section>
+        <h1>Async</h1>
+        <form id="form">
+            <fieldset>
+                <legend>Time To Get FIT!</legend>
+                <div>
+                    <label for="exercise">Type Of Exercise</label>
+                    <select name="exercise" id="exercise" required>
+                        <option value="">Select a Workout</option>
+                        <option value="Push-ups">Push-up</option>
+                        <option value="Jumping Jacks">Jumping Jacks</option>
+                        <option value="Jump Squat">Jump Squat</option>
+                        <option value="Sit-ups">Sit-ups</option>
+                      </select>
+                    </label>
+                </div>
+                <div>
+                    <label for="reps">Target Number Of Reps</label>
+                        <input id="reps" type="number" min="1" max="6" required></input>
+                    </label>
+                </div>
+                <div>
+                    <label for="time">Time In Seconds</label>
+                        <input id="time" type="number" min="1" max="30" required></input>
+                    </label>
+                </div>
+                <div>
+                    <label >Get Ready</label>
+                        <input type="submit"></input>
+                    </label>
+                </div>
+            </fieldset>
+        </form>
+        <div>
+            <h3>Submit to Start!</h3>
+            <p id="output"></p>
+        </div>
+    </section>
+</body>
+</html>
