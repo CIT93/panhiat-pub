@@ -8,16 +8,20 @@ function updateDOM(message, el) {
 }
 
 const startWorkOut = (exerciseType, reps, time, fn) => {
-  // this is a promise
-    return new Promise((resolve, reject) => {
+  
     fn(`Start ${exerciseType} exercise. The goal is ${reps} reps in ${time} seconds.`, "p")
 
-   // this was the async  
- 
-    setTimeout(() => {
-        resolve(`Stop ${exerciseType}`, "h1")
-    }, time * 1000)
+    // this is a promise
+    return new Promise((resolve, reject) => {
 
+   // this was the async  
+        if (time === 0){
+            reject(`Error on time selection`)
+        } else {
+            setTimeout(() => {
+                resolve(`Stop ${exerciseType}`, "h1")
+            }, time * 1000)
+        }
    })
 }
 
@@ -25,8 +29,8 @@ function onSuccess(data) {
     console.log(`Success: data`)
 }
 
-function onError(errorCode) {
-    console.log(`ERROR: ${errorCode}`)
+function onError(error) {
+    updateDOM(`ERROR: ${error}`, "h2")
 }
 
 function onFinally() {
