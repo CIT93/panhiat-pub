@@ -1,0 +1,20 @@
+html {
+    font-size: 22px;
+  }
+
+body {
+    background-color: gray;
+    color: whitesmoke;
+    font-size: 1em;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+section {
+    text-align: center;
+    margin-top: 2%;
+}
