@@ -19,35 +19,35 @@
 //       .then(response => response.json())
 //       .then(json => console.log(json))
 
-const output = document.getElementById("output")
+// const output = document.getElementById("output")
 
-function renderPhotos(photos) {
+// function renderPhotos(photos) {
 
-    try {
+//     try {
 
-        photos.forEach((img) => {
-            const imgElement = document.createElement("img");
-            imgElement.setAttribute("src", img.thumbnailUrl)
-            output.appendChild(imgElement)
-        })
-    } catch (error){
-        console.log(`Fetch Error`, error)
-    }
+//         photos.forEach((img) => {
+//             const imgElement = document.createElement("img");
+//             imgElement.setAttribute("src", img.thumbnailUrl)
+//             output.appendChild(imgElement)
+//         })
+//     } catch (error){
+//         console.log(`Fetch Error`, error)
+//     }
    
-}
+// }
 
-async function getPhotos() {
-    const photoURL = "https://jsonplaceholder.typicode.com/photos"
-    const request = await fetch(photoURL)
-    const data = await request.json()
-    renderPhotos(data.slice(0, 5));
-}
+// async function getPhotos() {
+//     const photoURL = "https://jsonplaceholder.typicode.com/photos"
+//     const request = await fetch(photoURL)
+//     const data = await request.json()
+//     renderPhotos(data.slice(0, 5));
+// }
 
-async function start() {
-    await getPhotos()
-}
+// async function start() {
+//     await getPhotos()
+// }
 
-start()
+// start()
 
 const emailUrl = "https://jsonplaceholder.typicode.com/comments"
 
