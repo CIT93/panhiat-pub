@@ -1,5 +1,5 @@
 import {renderTbl} from "./render.js";
-import { determineHouseSizePts, determineHouseHoldPts } from "./cfp.js";
+// import { determineHouseSizePts, determineHouseHoldPts } from "./cfp.js";
 import {FORM, FNAME, LNAME, SUBMIT } from "./global.js";
 import {saveLS, cfpData} from "./storage.js";
 import { FP } from "./fp.js";
@@ -41,16 +41,12 @@ FNAME.addEventListener('blur', validateField);
 LNAME.addEventListener('blur', validateField);
 
 
-
 FORM.addEventListener("submit", e => {
   e.preventDefault();
 
  if (FNAME.value !== '' && LNAME.value !== '') {
   SUBMIT.textContent = '';
-  //start(FNAME.value, LNAME.value, parseInt(FORM.housem.value),FORM.houses.value);
-  const fpObj = new FP(FNAME.value, LNAME.value, parseInt(FORM.housem.value), FORM.houses.value)
-  //fpObj.houseHoldPts();
-  // fpObj.houseSizePts();
+  const fpObj = new FP(FNAME.value, LNAME.value, parseInt(FORM.housem.value), FORM.houses.value, FORM.food.value);
   cfpData.push(fpObj);
   saveLS(cfpData);
   renderTbl(cfpData);
@@ -58,69 +54,68 @@ FORM.addEventListener("submit", e => {
  } else{
   SUBMIT.textContent = "Form requires first name and last name";
  }
- 
-})
+ })
 
 
 // Async js
 
-let pizza 
-function orderPizza() {
-  console.log("order pizza")
-  setTimeout(() => {
-     pizza = `🍕`
-    console.log(`${pizza} is ready`)
-    }, 2000)
-  console.log("Pizza was ordered")
-}
+// let pizza 
+// function orderPizza() {
+//   console.log("order pizza")
+//   setTimeout(() => {
+//      pizza = `🍕`
+//     console.log(`${pizza} is ready`)
+//     }, 2000)
+//   console.log("Pizza was ordered")
+// }
 
-orderPizza()
-console.log(`Eat ${pizza}`)
+// orderPizza()
+// console.log(`Eat ${pizza}`)
 
 
-//callback
+// //callback
 
-function orderPizza(callback) {
-  setTimeout(() => {
-    const pizza = `🍕`
-    callback(pizza)
-  }, 2000)
-}
+// function orderPizza(callback) {
+//   setTimeout(() => {
+//     const pizza = `🍕`
+//     callback(pizza)
+//   }, 2000)
+// }
 
-function pizzaReady(pizza) {
-  console.log(`Eat the ${pizza}`)
-}
+// function pizzaReady(pizza) {
+//   console.log(`Eat the ${pizza}`)
+// }
  
-orderPizza(pizzaReady)
-console.log(`call paul`)
+// orderPizza(pizzaReady)
+// console.log(`call paul`)
 
-window.addEventListener("click", function() {
-  console.log("click")
-})
-//rewrite above function
-window.addEventListener("click", callback) 
-  function callback() {
-    console.log("clicked")
-  }
+// window.addEventListener("click", function() {
+//   console.log("click")
+// })
+// //rewrite above function
+// window.addEventListener("click", callback) 
+//   function callback() {
+//     console.log("clicked")
+//   }
 
-//callback hell
-//three items to call back 
-// call shop, orderpizza, eat pizza
+// //callback hell
+// //three items to call back 
+// // call shop, orderpizza, eat pizza
 
-function thing1() {
-  //call the pizza shop callback()
-}
+// function thing1() {
+//   //call the pizza shop callback()
+// }
 
-function thing2() {
-  //order pizza callback()
-}
+// function thing2() {
+//   //order pizza callback()
+// }
 
-function thing3() {
-  //eat pizza callback
-}
+// function thing3() {
+//   //eat pizza callback
+// }
 
-//callback hell
+// //callback hell
 
-//thing1() => {thing2(() => {think3()}) }
+// //thing1() => {thing2(() => {think3()}) }
 
-//Async example Data fetching calling backend api loading files, timers and intervals
+// //Async example Data fetching calling backend api loading files, timers and intervals
