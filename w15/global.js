@@ -1,4 +1,4 @@
-//import { cfpData } from "./storage";
+//import { choreData } from "./storage";
 
 export const FORM = document.getElementById("form");
 export const TBL = document.getElementById("tab-data");
