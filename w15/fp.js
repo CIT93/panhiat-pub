@@ -7,6 +7,7 @@ class FP {
         this.foodChoice = foodChoice
         this.houseHoldPoints()
         this.houseSizePoints()
+        this.foodChoicePoints()
         this.total()
     }    
         houseHoldPoints() {
@@ -39,9 +40,9 @@ class FP {
             } else if (this.houseSize === "apt") {
                 this.houseSizePoints  = 2;
             }
-            
-          }
-            foodChoicePoints() {
+          }   
+
+        foodChoicePoints() {
               if (this.foodChoice === "meatDaily") {
                 this.foodChoicePoints = 10;
               } else if (this.foodChoice === "meatWeekly") {
@@ -60,7 +61,7 @@ class FP {
         }
 
         total() {
-        this.total = this.houseSizePoints + this.houseHoldPoints + this.foodChoicePoints ;
+        this.total = this.houseSizePoints + this.houseHoldPoints + this.foodChoicePoints;
         }
 }
 
