@@ -49,8 +49,7 @@ FORM.addEventListener("submit", e => {
   SUBMIT.textContent = '';
   //start(FNAME.value, LNAME.value, parseInt(FORM.housem.value),FORM.houses.value);
   const fpObj = new FP(FNAME.value, LNAME.value, parseInt(FORM.housem.value), FORM.houses.value, FORM.food.value)
-  //fpObj.houseHoldPts();
-  // fpObj.houseSizePts();
+ 
   cfpData.push(fpObj);
   saveLS(cfpData);
   renderTbl(cfpData);
