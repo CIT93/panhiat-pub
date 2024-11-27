@@ -51,9 +51,11 @@ FORM.addEventListener("submit", e => {
   const fpObj = new FP(FNAME.value, LNAME.value, parseInt(FORM.housem.value), FORM.houses.value, FORM.food.value)
  
   cfpData.push(fpObj);
+  
   saveLS(cfpData);
   renderTbl(cfpData);
   FORM.reset();
+
  } else{
   SUBMIT.textContent = "Form requires first name and last name";
  }
