@@ -1,18 +1,20 @@
 class FP {
-    constructor(first, last, houseMembers, houseSize, foodChoice, foodSource, water, both) {
-        this.first = first
-        this.last = last
-        this.houseMembers = houseMembers
-        this.houseSize = houseSize
-        this.foodChoice = foodChoice
-        this.foodSource = foodSource
-        this.water = water
-        this.both = both
-        this.calHouseHoldPoints()
-        this.calHouseSizePoints()
-        this.calFoodChoicePoints()
-        this.calFoodSourcePoints()
-        this.calTotal()
+    constructor(first, last, houseMembers, houseSize, foodChoice, foodSource, water, waterPoints, both, purchases ) {
+        this.first = first;
+        this.last = last;
+        this.houseMembers = houseMembers;
+        this.houseSize = houseSize;
+        this.foodChoice = foodChoice;
+        this.foodSource = foodSource;
+        this.water = water;
+        this.waterPoints = waterPoints;
+        this.both = both;
+        this.purchasesPoints = purchases;
+        this.calHouseHoldPoints();
+        this.calHouseSizePoints();
+        this.calFoodChoicePoints();
+        this.calFoodSourcePoints();
+        this.calTotal();
     }    
         calHouseHoldPoints() {
             if (this.houseMembers === 1) {
@@ -74,27 +76,16 @@ class FP {
           }
         }
 
-        calWaterPoints() {
-          if(this.water > 9){
-            this.waterPoints = 12;
-         } else if(this.waterPoints){
-            this.waterPoints = 2
-         } else if (this.water > 4) {
-           this.waterPoints = 2
-         }
-      
-        }
 
-        
         calTotal() {
-          this.total = 
-          this.houseSizePoints + 
-          this.houseHoldPoints + 
-          this.foodChoicePoints + 
-          this.foodSourcePoints + 
-          this.waterPoints +
-          this.purchasesPoints
-          }
+        this.total = 
+        this.houseSizePoints + 
+        this.houseHoldPoints + 
+        this.foodChoicePoints + 
+        this.foodSourcePoints + 
+        this.waterPoints +
+        this.purchasesPoints
+        }
 }
 
 export {FP}
