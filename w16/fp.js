@@ -73,16 +73,16 @@ class FP {
           }
         }
 
-        // calWaterPoints() {
-        //   if(this.water > 9){
-        //     this.waterPoints = 12;
-        //  } else if(this.waterPoints){
-        //     this.waterPoints = 2
-        //  } else if (this.water > 4) {
-        //    this.waterPoints = 2
-        //  }
+        calWaterPoints() {
+          if(this.water > 9){
+            this.waterPoints = 12;
+         } else if(this.waterPoints){
+            this.waterPoints = 2
+         } else if (this.water > 4) {
+           this.waterPoints = 2
+         }
       
-        // }
+        }
 
         calTotal() {
         this.total = this.houseSizePoints + this.houseHoldPoints + this.foodChoicePoints + this.foodSourcePoints + this.water;
