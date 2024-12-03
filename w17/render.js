@@ -8,8 +8,6 @@ const calculateAvg = (data) => {
   let newTD = newTR.insertCell(0);
   let newTD_1 = newTR.insertCell(0);
   let newTD_2 = newTR.insertCell(0);
-  //let newTD_3 = newTR.insertCell(0);
-  //let newTD_4 = newTR.insertCell(0);
   let newLabl = document.createTextNode(`Average Footprint`);
   let newText = document.createTextNode(`${Math.floor(reduceTotal / data.length)}`);
   newTD_1.appendChild(newLabl);
@@ -69,6 +67,10 @@ const renderTblHeading = () => {
     FORM.steel.checked = obj.recycle.steel;
     FORM.food.checked = obj.recycle.food;
     FORM.waste.value = obj.wastePoints;
+    FORM.personal.value = obj.personalPoints;
+    FORM.public_trans.value = obj.publicPoints;
+    FORM.flights.value = obj.flightsPoints;
+   
     onUpdate(index, data);
 });
     return td;

@@ -86,7 +86,10 @@ class FP {
         this.waterConsumPoints +
         this.purchasesPoints +
         this.wastePoints +
-        this.recycle.recycledPoints 
+        this.recycle.recycledPoints +
+        this.personalPoints +
+        this.publicPoints +
+        this.flightsPoints; 
           
     }
   }

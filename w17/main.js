@@ -20,7 +20,7 @@ const start = (first, last, houseHoldMembers, houseSize) => {
 
 renderTbl(cfpData);
 
-const validateField = (event) => {
+const validateField = event => {
   const field = event.target.value;
   const fieldId = event.target.id;
   const fieldError = document.getElementById(`${fieldId}Error`);
@@ -54,8 +54,6 @@ const determineRecycleItems = e => {
 
 FORM.addEventListener("submit", (e) => {
   e.preventDefault();
- // const recycleObj = determineRecycleItems(e);
-
   if (FNAME.value !== "" && LNAME.value !== "") {
     SUBMIT.textContent = "";
     const fpObj = new FP(
@@ -70,7 +68,10 @@ FORM.addEventListener("submit", (e) => {
       e.target.dish_washer.checked,
       parseInt(e.target.purchases.value),
       parseInt(e.target.waste.value),
-      determineRecycleItems(e),   
+      determineRecycleItems(e), 
+      parseInt(e.target.personal.value),
+      parseInt(e.target.public_trans.value),
+      parseInt(e.target.flights.value)  
     );
 
       cfpData.push(fpObj);
