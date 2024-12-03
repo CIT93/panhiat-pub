@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mom Decision App</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="shortcut icon" href="favicon.png" type="image/x-icon">
+    <script defer type="module" src="main.js"></script>
+</head>
+
+<body>
+    <header>
+        <h1>Decision App</h1>
+    </header>
+    <main>
+        <section>
+            <form id="form">
+                <fieldset>
+                    <legend>Mom Decision App</legend>
+                    <div>
+                        <label for="firstname">First Name:</label>
+                        <input type="text" id="firstname" name="firstname" maxlength="25" />
+                        <span id="firstnameError" class="error"></span>
+                    </div>
+                    <div>
+                        <label for="lastname">Last Name:</label>
+                        <input type="text" id="lastname" name="lastname" maxlength="25" />
+                        <span id="lastnameError" class="error"></span>
+                    </div>
+                    <div>
+                        <label for="weekDay">Days of the Week</label>
+                        <!-- <input type="text" name="houses" required/>  -->
+                        <select name="weekDay" required>
+                            <option value="">---Please select weekday---</option>
+                            <option value="Monday">Monday</option>
+                            <option value="Tuesday">Tuesday</option>
+                            <option value="Wednesday">Wednesday</option>
+                            <option value="Thursday">Thursday</option>
+                            <option value="Friday">Friday</option>
+                            <option value="Saturday">Saturday</option>
+                            <option value="Sunday">Sunday</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label for="energy">Energy Level:</label>
+                        <!-- <input type="text" name="houses" required/> -->
+                        <select name="energy" required>
+                            <option value="">---Please select energy level---</option>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                        </select>
+                    </div>
+                    <button type="submit">Submit</button>
+                    <span id="submitError" class="error"></span>
+                </fieldset>
+            </form>
+            <div id="tab-data"></div>
+            <br>
+            <div id="output"></div>
+        </section>
+    </main>
+    <footer>2024 &copy; Pa Nhia Thao</footer>
+</body>
+
+</html>
